@@ -8,11 +8,16 @@ import { useState } from 'react';
 import EffectSection from './components/EffectSection';
 
 function App() {
+  const [visible, setVisible] = useState(true);
   const [tab, setTab] = useState('effect');
+
+  // setTimeout(() => {
+  //   setVisible(false);
+  // }, 3000);
 
   return (
     <>
-      <Header />
+      {visible && <Header />}
 
       <main>
         <IntroSection />
