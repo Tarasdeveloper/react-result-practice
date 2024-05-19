@@ -1,6 +1,6 @@
-import './Button.css';
+import classes from './Button.module.css';
 
-function Button({ children, onClick, isActive }) {
+function Button({ children, isActive, ...props }) {
   // const handleMouseEnter = () => console.log('mouse Entered');
   // let classes = 'button';
   // if (isActive) classes += ' active';
@@ -8,8 +8,10 @@ function Button({ children, onClick, isActive }) {
   return (
     <button
       // className={classes}
-      className={isActive ? 'button active' : 'button'}
-      onClick={onClick}
+      {...props}
+      className={
+        isActive ? `${classes.button} ${classes.active}` : classes.button
+      }
       // onMouseEnter={handleMouseEnter}
       // onDoubleClick={() => console.log('dbl')}
     >
